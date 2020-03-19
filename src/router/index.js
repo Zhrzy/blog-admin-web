@@ -87,7 +87,7 @@ export const asyncRoutes = [
         meta: { title: '管理员管理', icon: 'user'  }
       },
       {
-        path: 'role',
+        path: 'role1',
         name: '角色管理',
         component: () => import('@/views/role/role'),
         meta: { title: '角色管理' ,icon: 'peoples' }
@@ -105,13 +105,13 @@ export const asyncRoutes = [
         path: 'tpage1',
         name: 'Tpage',
         component: () => import('@/views/tpage/tpage1'),
-        meta: { title: '页面1', icon: 'form' , roles:['editor'] }
+        meta: { title: '页面1', icon: 'form' }
       },
       {
         path: 'tpage2',
         name: 'Tpage',
         component: () => import('@/views/tpage/tpage2'),
-        meta: { title: '页面2', icon: 'form' ,roles:['editor'] }
+        meta: { title: '页面2', icon: 'form' }
       }
     ]
   }

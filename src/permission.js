@@ -37,6 +37,12 @@ router.beforeEach(async(to, from, next) => {
           const routerPath = await store.dispatch('permission/getRouterPathArray',store.getters.router) 
           //var route = ['/test','/test/test1','/tpage','/tpage/tpage1','/tpage/tpage2']
           const accessRoutes = await store.dispatch('permission/generateRoutes', routerPath)
+          // for(var i = 0;i<accessRoutes.length;i++){
+          //   console.log("打印路由========》"+accessRoutes[i].path);
+          //   for(var j = 0 ;j<accessRoutes[i].children.length;j++){
+          //     console.log("打印zi路由========》"+accessRoutes[i].children[j].path);
+          //   }
+          // }
           router.addRoutes(accessRoutes)
           next({ ...to, replace: true })
         } catch (error) {
