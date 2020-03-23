@@ -51,7 +51,7 @@
       </el-table-column>
       <el-table-column label="操作" fixed="right" width="180">
         <template slot-scope="scope">
-          <el-button size="mini" @click="handleEdit(scope.row)">编辑</el-button>
+          <el-button size="mini" @click="handleEdit(scope.row.categoryMenuUids)">编辑</el-button>
           <el-button size="mini" type="danger" @click="handleDelete(scope.row)">删除</el-button>
         </template>
       </el-table-column>
@@ -153,7 +153,7 @@ export default {
             }
           }
         this.tableData = data;
-        console.log("??"+tableData[0].categoryMenuUids);
+       
         this.currentPage = response.data.current;
         this.pageSize = response.data.size;
         this.total = response.data.total;
@@ -198,13 +198,15 @@ export default {
     }, 
     //编辑
     handleEdit: function(row) {
+     
       this.dialogFormVisible = true;
       this.dialogTitle= "修改角色信息";
       this.isEditForm = "true";
-      this.form = row;  
-      setTimeout(() => {
-        this.$refs.tree.setChecked(this.form.categoryMenuUids,false,false);
-      }, 0);
+      this.form.categoryMenuUids = row; 
+      console.log("====>"+row);
+      // setTimeout(() => {
+      //   this.$refs.tree.setCheckedKeys(row);
+      // }, 0);
     }
 
 
