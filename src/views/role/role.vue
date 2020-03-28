@@ -203,10 +203,11 @@ export default {
       this.dialogTitle= "修改角色信息";
       this.isEditForm = "true";
       this.form.categoryMenuUids = row; 
-      console.log("====>"+row);
-      // setTimeout(() => {
-      //   this.$refs.tree.setCheckedKeys(row);
-      // }, 0);
+      console.log(this.form.categoryMenuUids);
+      setTimeout(() => {
+        this.$refs.tree.setCheckedKeys(row);
+      }, 0);
+      
     }
 
 

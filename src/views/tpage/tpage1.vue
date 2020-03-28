@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <div>
-        <h1>tpage1</h1>
+        <h1>just a 路由测试页面...</h1>
   </div>
 
   </div>
